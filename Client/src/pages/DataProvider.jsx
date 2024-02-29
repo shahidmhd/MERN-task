@@ -12,11 +12,11 @@ export const DataProvider = ({ children }) => {
     const fetchData = async () => {
       try {
         const data = await getalldata();
-      if(data.success){
-        setData(data.data)
-      }else{
-        setData([])
-      }
+        if (data.success) {
+          setData(data.data)
+        } else {
+          setData([])
+        }
       } catch (error) {
         console.error('Error:', error);
       }

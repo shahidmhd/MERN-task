@@ -3,7 +3,6 @@ import Dashboard from './Dashboard'
 import Linechart from './Linechart'
 import Table from './Table'
 import Card from './Card'
-import Pagination from './Pagination'
 
 function Home() {
   return (
@@ -14,7 +13,7 @@ function Home() {
         <Table />
         <Card />
       </div>
-      {/* <Pagination /> */}
+    
     </main>
   )
 }

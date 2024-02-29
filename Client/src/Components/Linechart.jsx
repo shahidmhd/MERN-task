@@ -8,7 +8,7 @@ function Linechart() {
   useEffect(() => {
     const labels = data.map(item => item.month);
     const quantities = data.map(item => item.quantity);
-  
+
     const dataLine = {
       labels: labels,
       datasets: [{
@@ -19,7 +19,7 @@ function Linechart() {
         tension: 0.1,
       }],
     };
-  
+
     const configLine = {
       type: 'line',
       data: dataLine,
@@ -37,16 +37,16 @@ function Linechart() {
         },
       },
     };
-    
-  
+
+
     const chartCanvas = document.getElementById('lineChart');
     const lineChart = new Chart(chartCanvas, configLine);
-  
+
     return () => {
       lineChart.destroy();
     };
   }, [data]);
-  
+
 
   return (
     <div className="flex flex-col sm:flex-row gap-3 p-2">
