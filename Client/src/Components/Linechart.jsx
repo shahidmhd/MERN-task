@@ -1,45 +1,58 @@
 import React, { useEffect } from 'react';
 import Chart from 'chart.js/auto';
 import PieChart from './Piechart';
+import { useDataContext } from '../pages/DataProvider';
 
 function Linechart() {
+  const { data, updateData } = useDataContext();
   useEffect(() => {
-    const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'];
-    const data = {
+    const labels = data.map(item => item.month);
+    const quantities = data.map(item => item.quantity);
+  
+    const dataLine = {
       labels: labels,
       datasets: [{
-        label: 'My First Dataset',
-        data: [65, 59, 80, 81, 56, 55, 40,60,50,20,10,50],
+        label: 'Quantity',
+        data: quantities,
         fill: false,
         borderColor: 'rgb(75, 192, 192)',
         tension: 0.1,
       }],
     };
-
-    const config = {
+  
+    const configLine = {
       type: 'line',
-      data: data,
+      data: dataLine,
+      options: {
+        scales: {
+          xAxis: [
+            {
+              display: true,
+              title: {
+                display: true,
+                text: 'Months',
+              },
+            },
+          ],
+        },
+      },
     };
-
-    // Access the canvas element using useRef in a functional component
+    
+  
     const chartCanvas = document.getElementById('lineChart');
-    const lineChart = new Chart(chartCanvas, config);
-
-    // Cleanup chart on component unmount
+    const lineChart = new Chart(chartCanvas, configLine);
+  
     return () => {
       lineChart.destroy();
     };
-  }, []);
+  }, [data]);
+  
 
   return (
     <div className="flex flex-col sm:flex-row gap-3 p-2">
       <div className="card p-4 bg-white shadow-md rounded-md flex-grow">
         <h2 className="text-xl font-semibold mb-4">Line Chart</h2>
-        <canvas id="lineChart" className="w-full" height="300"></canvas>
+        <canvas id="lineChart" className="w-full" height="100"></canvas>
       </div>
       <PieChart />
     </div>

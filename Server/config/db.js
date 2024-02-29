@@ -2,7 +2,7 @@
 import mongoose from 'mongoose';
 
 // Replace 'your_database_name' with the name of your local MongoDB database
-const MONGODB_URI = 'mongodb://localhost:27017/your_database_name';
+const MONGODB_URI = 'mongodb+srv://shahidvk124:WGKnwuO6ev3C95N5@cluster0.v3xccnv.mongodb.net/adminpanel';
 
 // Connect to MongoDB
 const connectDB = async () => {

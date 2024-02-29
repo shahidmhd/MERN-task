@@ -1,56 +1,11 @@
-// import React from "react";
-// import PieChart from "./Chart";
-// import Table from "./Table";
 
-// function Dashboard() {
-//   return (
-//     <>
-
-//         {/* First section */}
-//         <div className="flex flex-row gap-1 p-5 justify-between">
-//           <h3 className="flex flex-row gap-2">
-//             Good Morning !{" "}
-//             <span>
-//               <img src="Assets/Sun With Face.svg" alt="" srcSet="" />
-//             </span>
-//           </h3>
-
-//           {/* Second section */}
-//           <div class="bg-white shadow-xl rounded-lg flex">
-//             <div class="p-2">
-//               <h3 class="text-center text-xl text-gray-900 font-medium leading-8">
-//                 Joh Doe
-//               </h3>
-//               <div class="text-center text-gray-400 text-xs font-semibold">
-//                 <p>john@example.com</p>
-//               </div>
-//             </div>
-//             <div class="photo-wrapper p-2">
-//               <img
-//                 class="w-10 h-10 rounded-md mx-auto"
-//                 src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-//                 alt="John Doe"
-//               />
-//             </div>
-//           </div>
-//         </div>
-      
-      
-
-//     </>
-//   );
-// }
-
-// export default Dashboard;
 import React from 'react';
-import Linechart from './Linechart'; // Import your Linechart component
-import Table from './Table'; // Import your Table component
-import Card from './Card'; // Import your Card component
+
 
 const Dashboard = () => {
   return (
     <>
-      <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start">
+      <div className="flex flex-col p-5 lg:flex-row justify-between items-center lg:items-start">
         {/* Left side */}
         <div className="flex flex-row gap-2">
           <h3 className='text-2xl font-semibold'>Good Morning ! </h3>
@@ -60,32 +15,22 @@ const Dashboard = () => {
         </div>
 
         {/* Right side */}
-        <div className="bg-white shadow-xl rounded-lg flex flex-col lg:flex-row lg:items-center">
-          <div className="p-2">
-            <h3 className="text-center text-xl text-gray-900 font-medium leading-8">
-              Joh Doe
-            </h3>
-            <div className="text-center text-gray-400 text-xs font-semibold">
-              <p>john@example.com</p>
+        <div class="py-2 px-2 max-w-sm  bg-white rounded-xl shadow-lg space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6">
+          
+          <div class="text-center space-y-2 sm:text-left">
+            <div class="space-y-0.5">
+              <p class="text-sm text-black font-semibold flex items-center justify-center">
+               Jhon Doe
+              </p>
+              <p class="text-slate-500 flex items-center justify-center">
+                Jhon@gmail.com
+              </p>
             </div>
+          
           </div>
-          <div className="photo-wrapper p-2">
-            <img
-              className="w-10 h-10 lg:w-16 lg:h-16 rounded-md mx-auto"
-              src="https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
-              alt="John Doe"
-            />
-          </div>
+          <img class="block mx-auto h-12 rounded-md sm:mx-0 sm:shrink-0" src="https://tailwindcss.com/img/erin-lindford.jpg" alt="Woman's Face" />
         </div>
       </div>
-
-      {/* next component */}
-      {/* <Linechart />
-
-      <div className="flex flex-col lg:flex-row gap-4 p-5">
-        <Table />
-        <Card />
-      </div> */}
     </>
   );
 };

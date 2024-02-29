@@ -2,6 +2,10 @@ import mongoose from 'mongoose';
 
 // Define a schema for the data
 const monthDataSchema = new mongoose.Schema({
+  id:{
+    type: Number,
+    required: true,
+  },
   month: {
     type: String,
     required: true,
