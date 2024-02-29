@@ -17,7 +17,8 @@ npm run dev
 
 
 
-Api  :
+Api:
 
- get all data  :  http://localhost:5000/api/data
-  edit  data  :   http://localhost:5000/api/data/id
+- GET all data: http://localhost:5000/api/data
+- edit data(PATCH): http://localhost:5000/api/data/:id
+
