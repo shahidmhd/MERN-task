@@ -1,5 +1,8 @@
 import React from 'react'
 import Dashboard from './Dashboard'
+import Linechart from './Linechart'
+import Table from './Table'
+import Card from './Card'
 
 function Home() {
   return (
@@ -65,25 +68,14 @@ function Home() {
           </header> */}
           {/* dashboard */}
           <Dashboard/>
+          <Linechart/>
+          <div className="flex flex-col lg:flex-row gap-4 p-5">
+        <Table />
+        <Card />
+      </div> 
          {/* footer */}
         </main>
   )
 }
 
 export default Home
-// import React from 'react'
-// import Dashboard from './Dashboard'
-// import Table from './Table'
-
-// function Home() {
-//   return (
-  
-//          <>
-//          <Dashboard/>
-      
-//          </>
-        
-//   )
-// }
-
-// export default Home
